@@ -1,14 +1,14 @@
-angular.module("landingPage", ['ngRoute'])
+angular.module("landingPage", ['ngRoute']);
 
 angular.module('landingPage').config(function ($routeProvider) {
     $routeProvider.when( '/', {
-        templateUrl: '/views/main.html'
+        templateUrl: '/landingPartials/main.html'
     });
     $routeProvider.when( '/contact', {
-        templateUrl: '/views/contact.html'
+        templateUrl: '/landingPartials/contact.html'
     });
     $routeProvider.when( '/about', {
-        templateUrl: '/views/about.html',
+        templateUrl: '/landingPartials/about.html',
         controller : 'aboutCtrl',
     });
     // the default route
