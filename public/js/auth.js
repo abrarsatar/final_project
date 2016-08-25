@@ -15,12 +15,14 @@
             // email (ng-model)
             // password (ng-model)
         };
+        auth.isManager = false;
+
 
         auth.login = {
             // happens when the user clicks submit on the login form
             submit: function($event) { // click-event
                 console.info('auth.login.submit', $event);
-
+                auth.payload.manager = auth.isManager;
                 $http.post('/login', auth.payload)
                     .then(auth.login.success, auth.login.error);
                     // brandon reminds you, that a wiffle bat will strike you if you forget your error callback!

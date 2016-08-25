@@ -10,7 +10,9 @@ var mongoose = require('mongoose'),
         created: {
             type: Number,
             default: () => Date.now()
-        }
+        },
+        manager : Boolean,
+        rep   : Boolean,
         // created: {
         //     type:number,
         //     default: function() {
