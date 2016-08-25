@@ -1,4 +1,7 @@
 var Auth = require('./auth')
+var heroCtrl = require('./heroes');
+var hqCtrl   = require('./hqs');
+// var otherCtrl = require('./other');
 
 module.exports = (app) => {
     app.get('/', (req,res) => {
@@ -16,4 +19,15 @@ module.exports = (app) => {
     app.get('/dashboard', (req, res) => {
         res.render('dashboard.html', req.session);
     })
+
+    // Hero Routes
+    app.get('/api/heroes', heroCtrl.get);
+    app.post('/api/heroes', heroCtrl.upsert);
+
+    // HQ Routes
+    app.get('/api/hqs', hqCtrl.get); // Find Many
+    app.get('/api/hqs/:id', hqCtrl.get); // Find One
+    app.post('/api/hqs', hqCtrl.upsert); // Create
+    app.post('/api/hqs/:id', hqCtrl.upsert); // Update
+
 }

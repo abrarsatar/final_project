@@ -1,4 +1,221 @@
-<div class="jumbotron">
-  <h1>Welcome to your dashboard!</h1>
-  <p>One day this page will be filled with imagination.</p>
+
+
+<div ng-controller = "dashCtrl as dash" class="jumbotron">
+  <h1>Dashboard</h1>
+
+  <div class = "row">
+
+    <p style = "float:right"><a class="btn btn-lg btn-default" data-toggle="modal" data-target="#newRepModal">New Rep</a></p>
+
+
+      <div class="modal fade" tabindex="-1" id = "newRepModal" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title">New Rep</h4>
+              </div>
+              <div class="modal-body">
+                  <form ng-submit="dash.addRep()">
+
+                    <h3>Name:</h3><input type = "name" ng-model = "dash.newRep.name">
+                    <h3>Quota:</h3><input type = "number" ng-model = "dash.newRep.quota">
+                    <h3>Actual:</h3><input type = "number" ng-model = "dash.newRep.actual">
+                    <hr>
+
+                    <input type = "submit" class="btn btn-primary" data-toggle="modal" data-target="#newRepModal">
+
+
+                  </form>
+              </div>
+              <div class="modal-footer">
+              <!--<button type="button" class="btn btn-default" data-dismiss="modal" >Close</button>-->
+            </div>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div><!-- /.modal -->
+
+          <div class="modal fade" tabindex="-1" id = "editRepModal" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title">Edit Rep</h4>
+              </div>
+              <div class="modal-body">
+
+                  <form ng-submit="dash.editRep()">
+
+                    <h3>Name:</h3><input type = "name" ng-model = "dash.currentRep.name">
+                    <h3>Quota:</h3><input type = "number" ng-model = "dash.currentRep.quota">
+                    <h3>Actual:</h3><input type = "number" ng-model = "dash.currentRep.actual" ng-change="dash.updateAcutalBar()">
+                    <hr>
+
+                    <input type = "submit" class="btn btn-primary" data-toggle="modal" data-target="#editRepModal">
+
+
+                  </form>
+
+
+
+
+              </div>
+              <div class="modal-footer">
+              <!--<button type="button" class="btn btn-default" data-dismiss="modal" >Close</button>-->
+            </div>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div><!-- /.modal -->
+  </div>
+
+
+
+    <div class = "row">
+
+      <div class="col-md-1">
+        <div class="input-group-btn">
+
+          <button type="button" class="btn btn-justified dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Select Sales Rep
+            <span class="caret"></span>
+          </button>
+
+          <ul class="dropdown-menu">
+
+
+              <li ng-repeat = "rep in dash.Employees track by $index"> <a href = "" ng-click = "dash.showRep(rep,$index)"> {{rep.name}} </a> </li>
+              <li role="separator" class="divider"></li>
+              <li><a href="#/teamstats">Entire Team Stats</a></li>
+
+
+          </ul>
+
+        </div>
+      </div>
+
+    </div>
+
+    <div class = "row" ng-show = "dash.currentRep.name">
+      <a  style = "float:right" class = "btn" data-toggle="modal" data-target="#editRepModal">
+            <img src ="http://icons.iconarchive.com/icons/icons8/windows-8/512/Files-Edit-File-icon.png" style = "height : 20px">
+        </a>
+
+        <h3>{{dash.currentRep.name}}</h3>
+
+
+
+       <hr>
+
+      <div class = "row">
+        <div class = "bargraph col-md-6">
+            <table id="q-graph">
+            <caption>{{dash.currentRep.name}} Quarterly Results</caption>
+
+            <thead>
+            <tr>
+            <th></th>
+            <th class="actual">Actual</th>
+            <th class="goal">Goal</th>
+
+            </tr>
+
+            </thead>
+            <tbody>
+            <tr class="qtr" id="q1">
+            <th scope="row"><b>2015</b></th>
+            <td class="goal bar" style="height: 240px;"></td>
+            <!--<td class="actual bar" style="height: {{dash.currentRep.height}}px;"></td>-->
+            <td class="actual bar" ng-style="{ 'height': (dash.currentRep.actual/dash.currentRep.quota)*240 +'px' }"></td>
+            </tr>
+
+
+
+            </tbody>
+
+            </table>
+
+            <div id="ticks">
+
+            <div class="tick" style="height: 59px;"><p>${{dash.currentRep.fifthTick}}</p></div>
+            <div class="tick" style="height: 59px;"><p>${{dash.currentRep.fourthTick}}</p></div>
+            <div class="tick" style="height: 59px;"><p>${{dash.currentRep.thirdTick}}</p></div>
+            <div class="tick" style="height: 59px;"><p>${{dash.currentRep.secondTick}}</p></div>
+            <div class="tick" style="height: 59px;"><p>${{dash.currentRep.firstTick}}</p></div>
+            </div>
+
+          </div>
+
+          <div class = "piechart col-md-6">
+              <div class="donut-chart">
+
+                    <div id="portion1" class="back">
+                      <div class="front " > </div>
+                    </div>
+
+                    <div id="portion2" class="back">
+                      <div class="front " ></div>
+                    </div>
+
+
+
+                    <div id="portionFinal" class="back">
+
+
+                      <!--ng-style = "{'transform': 'rotate(' + (attributes.actual / attributes.quota) * 360 +'deg)'}"-->
+
+                      <div class="front"
+                          ng-style = "{'transform': 'rotate(' + (dash.currentRep.actual / dash.currentRep.quota) * 360 +'deg)'}"
+                      ></div>
+
+                    </div>
+
+              </div>
+
+              <p id = "year"><b>2015</b></p>
+
+                <hr>
+
+
+
+
+          </div>
+      </div>
+
+      <div class = "row">
+          <div class = "tabledata col-md-6 col-md-offset-3">
+            <hr>
+            <table >
+            <caption> <b> Daily Metrics </b></caption>
+
+            <thead>
+            <tr>
+            <th>Calls </th>
+            <th>Connects</th>
+            <th>E-mails</th>
+
+            </tr>
+
+            </thead>
+
+            <tbody>
+            <tr>
+            <td > 50</td>
+            <td >50</td>
+            <!--<td class="actual bar" style="height: {{dash.currentRep.height}}px;"></td>-->
+            <td >50</td>
+            </tr>
+
+
+
+            </tbody>
+
+            </table>
+
+
+          </div>
+
+
+
+      </div>
+
 </div>

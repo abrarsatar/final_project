@@ -7,7 +7,7 @@ var express = require('express'),
     ejs = require('ejs'),
     mongoose = require('mongoose'),
     sessions = require('client-sessions'), // encrypted cookies!
-    port = process.env.PORT || 1337,
+    port = process.env.PORT || 3000,
     Routes = require('./routes'),
     app = express();
 
@@ -37,6 +37,9 @@ mongoose.connect('mongodb://localhost/mean-auth', (mongooseErr) => {
         console.info('Mongoose initilized!'.green.bold);
     }
 });
+
+
+app.post('*', bodyParser.json(), bodyParser.urlencoded({ extended: true }));
 
 Routes(app);
 
