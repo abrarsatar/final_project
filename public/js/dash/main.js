@@ -1,5 +1,4 @@
-alert('dash is up and running');
-      angular.module('dashboard',[])
+      angular.module('app.dashboard')
             .controller('dashCtrl', dashCtrl)
 
       function dashCtrl() {

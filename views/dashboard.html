@@ -13,9 +13,10 @@
 
         <link rel="stylesheet" href="/css/dashboard.css">
         <script src="/js/dashboard.js"></script>
+        <script src="/js/dash/main.js"></script>
 
     </head>
-    <body ng-controller="DashboardController as dashboard" class="container">
+    <body ng-controller="NavCtrl as nCtrl" class="container">
         <nav class="navbar navbar-inverse">
           <div class="container-fluid">
             <div class="navbar-header">
@@ -36,7 +37,7 @@
             </div>
           </div>
         </nav>
-          
+
         <div ng-view ="">
 
         </div>
