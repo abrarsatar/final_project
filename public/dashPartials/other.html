@@ -1,1 +1,19 @@
-this is from other html
+<div class="container">
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>Phone Number</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="hero in hCtrl.heroList">
+          <td>{{ hero.name }}</td>
+      </tr>
+
+    </tbody>
+  </table>
+</div>

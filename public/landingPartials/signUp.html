@@ -1,53 +1,27 @@
-
-        <!--{{hCtrl.hqList}}-->
-        <h1>Hero Form</h1>
-        <form ng-submit="hCtrl.makeAHero()">
-            <input class="form-control" ng-model="hCtrl.newHero.name" placeholder="Name">
-
-            <input ng-repeat="power in hCtrl.newHero.powers track by $index" class="form-control" ng-model="hCtrl.newHero.powers[$index]"
-            placeholder="Power">
-
-            <input ng-repeat="weak in hCtrl.newHero.weaknesses track by $index" class="form-control" ng-model="hCtrl.newHero.weaknesses[$index]"
-            placeholder="Weakness">
-
-            <input class="form-control" type="checkbox" ng-model="hCtrl.newHero.masked">
-
-            <input class="form-control" ng-model="hCtrl.newHero.origin"
-            placeholder="Origin">
-
-            <select
-            ng-model="hCtrl.newHero.headquarters" class="form-control"
-            ng-options="hq._id as hq.name for hq in hCtrl.hqList"
-            >
-            <!--VALUE as DISPLAY for OBJ in LIST-->
-                <option value="" selected disabled>Choose HQ</option>
-
-            </select>
-
-            <input type="submit">
-
-            <div ng-click="hCtrl.pwExtra('powers')" class="btn btn-info"> Add Power </div>
-            <div ng-click="hCtrl.pwExtra('weaknesses')" class="btn btn-info"> Add Weakness </div>
-        </form>
-
-        <h1>Headquarter Form</h1>
-
-        <form ng-submit="hCtrl.makeAnHQ()">
-            <input class="form-control" ng-model="hCtrl.newHQ.name", placeholder="Name">
-            <input class="form-control" type="checkbox" ng-model="hCtrl.newHQ.butler", placeholder="Butler">
-            <input class="form-control" ng-model="hCtrl.newHQ.moatType", placeholder="Moat Type">
-             <input class="form-control" ng-repeat="amenity in hCtrl.newHQ.amenities track by $index" ng-model="hCtrl.newHQ.amenities[$index]", placeholder="Amenity">
-
-             <input type="submit">
-             <div ng-click="hCtrl.addAmenity()" class="btn btn-primary"> Add Amenity </div>
-        </form>
-
-
-    <div class="row">
-        <div class="col-xs-12">
-            <h1>Heroes List : </h1>
-        </div>
-        <div ng-repeat="hero in hCtrl.heroList" class="col-xs-12">
-            {{ hero.name }}
-        </div>
-    </div>
+<div class = "row" id = "demoForm">
+  <div class = "col-md-4 col-md-offset-8">
+          <!--{{hCtrl.hqList}}-->
+          <h1>Demo Request</h1>
+          <form ng-submit="hCtrl.makeAHero()">
+              <input class="form-control" ng-model="hCtrl.newHero.name" placeholder="Name">
+              <input ng-repeat="power in hCtrl.newHero.powers track by $index" class="form-control" ng-model="hCtrl.newHero.powers[$index]"
+              placeholder="Power">
+              <input ng-repeat="weak in hCtrl.newHero.weaknesses track by $index" class="form-control" ng-model="hCtrl.newHero.weaknesses[$index]"
+              placeholder="Weakness">
+              <input class="form-control" type="checkbox" ng-model="hCtrl.newHero.masked">
+              <input class="form-control" ng-model="hCtrl.newHero.origin"
+              placeholder="Origin">
+              <input type="submit">
+              <div ng-click="hCtrl.pwExtra('powers')" class="btn btn-info"> Add Power </div>
+              <div ng-click="hCtrl.pwExtra('weaknesses')" class="btn btn-info"> Add Weakness </div>
+          </form>
+      <div class="row">
+          <div class="col-xs-12">
+              <h1>Heroes List : </h1>
+          </div>
+          <div ng-repeat="hero in hCtrl.heroList" class="col-xs-12">
+              {{ hero.name }}
+          </div>
+      </div>
+  </div>
+</div>

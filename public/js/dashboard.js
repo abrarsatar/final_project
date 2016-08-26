@@ -5,8 +5,8 @@ angular.module('app.dashboard').config(function ($routeProvider) {
         controller: 'dashCtrl as dash',
     });
     $routeProvider.when( '/other', {
-        templateUrl: '/dashPartials/other.html'
-
+        templateUrl: '/dashPartials/other.html',
+        controller : 'heroesController as hCtrl',
     });
 
     // the default route
