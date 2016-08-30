@@ -3,15 +3,19 @@
   <table class="table">
     <thead>
       <tr>
-        <th>First Name</th>
-        <th>Last Name</th>
+        <th>Name</th>
         <th>Email</th>
         <th>Phone Number</th>
+        <th>Using CRM?</th>
+
       </tr>
     </thead>
     <tbody>
       <tr ng-repeat="hero in hCtrl.heroList">
           <td>{{ hero.name }}</td>
+          <td>{{hero.email}}</td>
+          <td>{{hero.phone}}</td>
+          <td ng-show = {{hero.current}}>Yes</td>
       </tr>
 
     </tbody>

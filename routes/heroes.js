@@ -47,8 +47,8 @@ module.exports = {
             // Or, if req.body doesn't match your schema - manually construct the object you pass to new Hero
             // var newHero = new Hero({
             //     name : req.body.firstName + ' ' + req.body.lastName,
-            //     powers : req.body.powers.split(', '),
-            //     weaknesses : someOtherObj.stuff,
+            //     email : req.body.email.split(', '),
+            //     phone : someOtherObj.stuff,
 
             // })
 

@@ -6,8 +6,8 @@ heroCtrl.$inject = ['apiFactory']
 function heroCtrl (apiFactory){
     var hCtrl = this;
     hCtrl.newHero = {
-        powers     : [''], // starting with an empty array element so the ngRepeat will show HTML
-        weaknesses : ['']
+        email     : '', // starting with an empty array element so the ngRepeat will show HTML
+        phone : ''
     };
     hCtrl.newHQ = {
         amenities : ['']

@@ -3,17 +3,14 @@ var mongoose = require('mongoose');
 // Create a model / schema
 var heroSchema = mongoose.Schema({
     name:       {type : String},
-    powers:     {type : Array, default : []},
-    weaknesses: {type : Array, default : []},
-    headquarters:         {
-            type : mongoose.Schema.ObjectId,
-            ref  : 'HQ' // Collection name as MONGOOSE understands it - first arg to mongoose.model
-    },
+    email:     {type : String},
+    phone: {type : String},
+
     // sidekick:   {
     //     name : {type : String},
     //     caped: {type : Boolean}
     // },
-    masked:     {type : Boolean, default : false},
+    current:     {type : Boolean, default : false},
     origin:     {type : String},
 });
 
