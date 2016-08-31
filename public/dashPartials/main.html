@@ -1,13 +1,7 @@
-
-
 <div class="jumbotron">
   <h1>Dashboard</h1>
-
   <div class = "row">
-
     <p style = "float:right"><a class="btn btn-lg btn-default" data-toggle="modal" data-target="#newRepModal">New Rep</a></p>
-
-
       <div class="modal fade" tabindex="-1" id = "newRepModal" role="dialog">
         <div class="modal-dialog" role="document">
           <div class="modal-content">
@@ -17,15 +11,11 @@
               </div>
               <div class="modal-body">
                   <form ng-submit="dash.addRep()">
-
                     <h3>Name:</h3><input type = "name" ng-model = "dash.newRep.name">
                     <h3>Quota:</h3><input type = "number" ng-model = "dash.newRep.quota">
                     <h3>Actual:</h3><input type = "number" ng-model = "dash.newRep.actual">
                     <hr>
-
                     <input type = "submit" class="btn btn-primary" data-toggle="modal" data-target="#newRepModal">
-
-
                   </form>
               </div>
               <div class="modal-footer">
@@ -34,7 +24,6 @@
           </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
       </div><!-- /.modal -->
-
           <div class="modal fade" tabindex="-1" id = "editRepModal" role="dialog">
         <div class="modal-dialog" role="document">
           <div class="modal-content">

@@ -5,6 +5,8 @@
       heroCtrl.$inject = ['apiFactory']
 
       function heroCtrl (apiFactory){
+        console.log('heroCtrl')
+
           var hCtrl = this;
           hCtrl.newHero = {
               email     : [''], // starting with an empty array element so the ngRepeat will show HTML
@@ -58,6 +60,24 @@
 
           hCtrl.addAmenity = function(){
               hCtrl.newHQ.amenities.push('');
+          }
+
+          hCtrl.call = {
+          }
+
+          hCtrl.calls=[{
+
+          }]
+
+            function newCall(attributes){
+              this.type = attributes.type;
+              this.note=attributes.note;
+              this.date=attributes.date;
+            }
+          hCtrl.addCall = function (){
+            hCtrl.calls.push(new newCall(hCtrl.call))
+            hCtrl.call = { }
+            console.log(hCtrl.calls)
           }
 
       }

@@ -22,20 +22,20 @@
                     <h4 class="modal-title">Record Call</h4>
                     </div>
                     <div class="modal-body">
-                        <form ng-submit="dash.addCall()">
+                        <form>
                           <label>Call Type</label>
-                          <select class= "form-control" ng-model="dash.call.type">
+                          <select class= "form-control" ng-model="hCtrl.call.type">
                           <option value="Phone">Phone</option>
                           <option value="Email">Email</option>
                           <option value="Other">Other</option>
                         </select>
                           <label>Notes:</label>
                           <br>
-                          <textarea cols = "80%" ng-model = "dash.call.note"></textarea>
-                          <input type = "date" ng-model = "dash.call.date" />
+                          <textarea cols = "80%" ng-model = "hCtrl.call.note"></textarea>
+                          <input type = "date" ng-model = "hCtrl.call.date" />
                           <hr>
-                          
-                          <input type = "submit" class="btn btn-primary" data-toggle="modal" data-target="#newCallModal">
+
+                          <input ng-click="hCtrl.addCall()" type = "submit" class="btn btn-primary" data-toggle="modal" data-target="#newCallModal">
                         </form>
                     </div>
           <td>{{hero.email}}</td>
@@ -45,4 +45,10 @@
 
     </tbody>
   </table>
+  <div ng-repeat="call in hCtrl.calls">
+      {{call.type}},
+      {{call.note}},
+      {{call.date}},
+
+  </div>
 </div>

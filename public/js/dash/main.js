@@ -10,7 +10,6 @@
           dash.newRep = {}
 
           dash.Employees = [{
-
           }]
 
           function Salesrep(attributes) {
@@ -45,18 +44,7 @@
 
           }
 
-          dash.call = {
-
-          }
-
-            function newCall(attributes){
-              this.type = attributes.type;
-              this.note=attributes.note;
-              this.date=attributes.date;
-            }
-          dash.addCall = function (){
-            dash.calls.push(new newCall(dash.call))
-          }
+          
 
       }
 
