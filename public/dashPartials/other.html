@@ -34,9 +34,8 @@
                           <textarea cols = "80%" ng-model = "hCtrl.call.note"></textarea>
                           <input type = "date" ng-model = "hCtrl.call.date" />
                           <hr>
-
-                          <input ng-click="hCtrl.addCall()" type = "submit" class="btn btn-primary" data-toggle="modal" data-target="#newCallModal">
-                        </form>
+                          <input ng-click = "hCtrl.makeACall()" type = "submit" class="btn btn-primary" data-toggle="modal" data-target="#newCallModal">
+                      </form>
                     </div>
           <td>{{hero.email}}</td>
           <td>{{hero.phone}}</td>
@@ -45,10 +44,5 @@
 
     </tbody>
   </table>
-  <div ng-repeat="call in hCtrl.calls">
-      {{call.type}},
-      {{call.note}},
-      {{call.date}},
 
-  </div>
 </div>

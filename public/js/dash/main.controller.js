@@ -40,44 +40,21 @@
           }
 
 
-          hCtrl.retrieveHQs = function(){
+          hCtrl.makeACall = function () {
               apiFactory
-                  .getHQs()
+                  .createCall(hCtrl.call)
+                  .then(function(error, response){
+                      if(error){console.log(error)}
+                      else{
+                      console.log('hCtrl.call post', response.data)}  })};
+
+          hCtrl.retrieveCalls = function(){
+              apiFactory
+                  .getCall()
                   .then(function(response){
-                      hCtrl.hqList = response.data;
+                      hCtrl.callList = response.data;
                   });
           }
+          hCtrl.retrieveCalls();
 
-          hCtrl.retrieveHQs();
-
-          hCtrl.makeAnHQ = function () {
-              apiFactory
-                  .createHQ(hCtrl.newHQ)
-                  .then(function(response){
-                      console.log(response);
-                  });
-          }
-
-          hCtrl.addAmenity = function(){
-              hCtrl.newHQ.amenities.push('');
-          }
-
-          hCtrl.call = {
-          }
-
-          hCtrl.calls=[{
-
-          }]
-
-            function newCall(attributes){
-              this.type = attributes.type;
-              this.note=attributes.note;
-              this.date=attributes.date;
-            }
-          hCtrl.addCall = function (){
-            hCtrl.calls.push(new newCall(hCtrl.call))
-            hCtrl.call = { }
-            console.log(hCtrl.calls)
-          }
-
-      }
+}

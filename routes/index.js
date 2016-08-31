@@ -1,7 +1,7 @@
 var Auth = require('./auth')
 var heroCtrl = require('./heroes');
 var hqCtrl   = require('./hqs');
-// var otherCtrl = require('./other');
+var callCtrl = require('./callAPI')
 
 module.exports = (app) => {
     app.get('/', (req,res) => {
@@ -24,10 +24,7 @@ module.exports = (app) => {
     app.get('/api/heroes', heroCtrl.get);
     app.post('/api/heroes', heroCtrl.upsert);
 
-    // HQ Routes
-    app.get('/api/hqs', hqCtrl.get); // Find Many
-    app.get('/api/hqs/:id', hqCtrl.get); // Find One
-    app.post('/api/hqs', hqCtrl.upsert); // Create
-    app.post('/api/hqs/:id', hqCtrl.upsert); // Update
-
+    app.get('/api/calls', callCtrl.get);
+    app.post('/api/calls', callCtrl.upsert);
+    
 }

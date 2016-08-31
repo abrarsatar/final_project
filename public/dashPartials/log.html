@@ -1,4 +1,4 @@
-<div ng-repeat="call in hCtrl.calls">
+<div ng-repeat="call in hCtrl.callList track by $index ">
     {{call.type}},
     {{call.note}},
     {{call.date}},

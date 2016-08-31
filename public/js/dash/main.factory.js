@@ -13,28 +13,19 @@
           function createHero (heroData) {
               return $http.post('/api/heroes', heroData)
           }
-
-          function getHQs (hqID){
-              var param = hqID ? `/${hqID}` : '';
-
-              // var param = '';
-              // if(hqID){
-              //     param = `/${hqID}`;
-              //     // '/' + hqID
-              // }
-
-              return $http.get(`/api/hqs${param}`)
-              // '/api/hqs' + param
+          function getCall () {
+              return $http.get('/api/calls')
           }
-          function createHQ (hqData){
-              return $http.post('/api/hqs', hqData)
+          function createCall (callData) {
+              console.log(callData);
+              return $http.post('/api/calls', callData)
           }
 
-          // This return value is exactly what we gain access to in the controller
+
           return {
               getHeroes : getHeroes,
               createHero: createHero,
-              getHQs    : getHQs,
-              createHQ  : createHQ,
+              getCall   : getCall,
+              createCall: createCall,
           }
       }
