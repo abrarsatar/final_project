@@ -8,7 +8,10 @@ angular.module('app.dashboard').config(function ($routeProvider) {
         templateUrl: '/dashPartials/other.html',
         controller : 'heroesController as hCtrl',
     });
-
+    $routeProvider.when( '/callLog', {
+        templateUrl: '/dashPartials/log.html',
+        controller : 'heroesController as hCtrl',
+    });
     // the default route
     $routeProvider
       .otherwise({

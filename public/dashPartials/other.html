@@ -12,7 +12,32 @@
     </thead>
     <tbody>
       <tr ng-repeat="hero in hCtrl.heroList">
-          <td>{{ hero.name }}</td>
+          <td><a data-toggle="modal" data-target="#newCallModal">{{ hero.name }}</a></td>
+
+            <div class="modal fade" tabindex="-1" id = "newCallModal" role="dialog">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Record Call</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form ng-submit="dash.addCall()">
+                          <label>Call Type</label>
+                          <select class= "form-control" ng-model="dash.call.type">
+                          <option value="Phone">Phone</option>
+                          <option value="Email">Email</option>
+                          <option value="Other">Other</option>
+                        </select>
+                          <label>Notes:</label>
+                          <br>
+                          <textarea cols = "80%" ng-model = "dash.call.note"></textarea>
+                          <input type = "date" ng-model = "dash.call.date" />
+                          <hr>
+                          
+                          <input type = "submit" class="btn btn-primary" data-toggle="modal" data-target="#newCallModal">
+                        </form>
+                    </div>
           <td>{{hero.email}}</td>
           <td>{{hero.phone}}</td>
           <td ng-show = {{hero.current}}>Yes</td>

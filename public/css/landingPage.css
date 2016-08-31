@@ -2,6 +2,7 @@
 .navbar {
   margin-bottom: 0;
   border-radius: 0;
+  
 }
 
 /* Add a gray background color and some padding to the footer */
@@ -13,13 +14,16 @@ footer {
 .carousel-inner  {
   width: 100%; /* Set width to 100% */
   margin: auto;
-  height:900px;
+  height:600px;
   overflow: hidden;
 }
 .carousel-inner  img{
   width: 100%; /* Set width to 100% */
-  margin: auto;
+  margin: none;
   min-height:300px;
+  display: inline;
+
+
 }
 
 
@@ -29,6 +33,19 @@ footer {
   display: none;
 }
 }
+
+.prompt {
+  z-index: 1;
+  position : fixed;
+  border-radius: 3px;
+  width:500px;
+  height: 300px;
+  top:50%;
+  left:50%;
+  opacity:1;
+}
+
+.promt
 
 
 #demoForm {
