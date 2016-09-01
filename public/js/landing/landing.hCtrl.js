@@ -9,9 +9,7 @@ function heroCtrl (apiFactory){
         email     : '', // starting with an empty array element so the ngRepeat will show HTML
         phone : ''
     };
-    hCtrl.newHQ = {
-        amenities : ['']
-    }
+
 
     hCtrl.retrieveHeroes = function(){
         apiFactory
@@ -22,41 +20,21 @@ function heroCtrl (apiFactory){
     }
     hCtrl.retrieveHeroes();
     // console.log(apiFactory)
-
+    hCtrl.message = '';
     hCtrl.makeAHero = function () {
         apiFactory
             .createHero(hCtrl.newHero)
             .then(function(response){
                 console.log(response);
                 hCtrl.retrieveHeroes();
+hCtrl.message = 'We will reach out to you shortly.';
+
             });
+
     }
 
     hCtrl.pwExtra = function (which) {
         hCtrl.newHero[which].push('');
-    }
-
-
-    hCtrl.retrieveHQs = function(){
-        apiFactory
-            .getHQs()
-            .then(function(response){
-                hCtrl.hqList = response.data;
-            });
-    }
-
-    hCtrl.retrieveHQs();
-
-    hCtrl.makeAnHQ = function () {
-        apiFactory
-            .createHQ(hCtrl.newHQ)
-            .then(function(response){
-                console.log(response);
-            });
-    }
-
-    hCtrl.addAmenity = function(){
-        hCtrl.newHQ.amenities.push('');
     }
 
 }

@@ -7,34 +7,25 @@
       <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
       <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
       <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-
       <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular.js"></script>
       <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular-route.js"></script>
-
         <link rel="stylesheet" href="/css/dashboard.css">
         <script src="/js/dashboard.js"></script>
         <script src="/js/dash/main.js"></script>
         <script src="/js/dash/main.controller.js"></script>
         <script src="/js/dash/main.factory.js"></script>
-
     </head>
     <body ng-controller="NavCtrl as nCtrl" class="container">
         <nav class="navbar navbar-inverse">
           <div class="container-fluid">
             <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-              <a class="navbar-brand" href="#"><img src = ""></img></a>
+                        <a class="navbar-brand" href="#"><img src = ""></img></a>
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
               <ul class="nav navbar-nav">
                 <li><a href="#/">Dashboard</a></li>
                 <li><a href="#/other">Contacts</a></li>
                 <li><a href="#/callLog">Call's Logged</a></li>
-
               </ul>
               <a href="/logout" class="btn pull-right nav navbar-nav">Logout</a>
             </div>
@@ -42,15 +33,10 @@
         </nav>
 
         <div ng-view ="">
-
         </div>
 
         <br>
-
         <footer class="container-fluid text-center footer">
-
-
         </footer>
-
     </body>
 </html>

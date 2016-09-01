@@ -3,36 +3,29 @@ body {
   padding-bottom: 20px;
 
 }
-
 .header,
 .marketing,
 .footer {
   padding-left: 15px;
   padding-right: 15px;
 }
-
 .header {
   border-bottom: 1px solid #e5e5e5;
 }
-
 .header h3 {
   margin-top: 0;
   margin-bottom: 0;
   line-height: 40px;
   padding-bottom: 19px;
 }
-
 .footer {
   padding-top: 19px;
   color: #777;
   border-top: 1px solid #e5e5e5;
 }
-
-
 .container-narrow > hr {
   margin: 30px 0;
 }
-
 .jumbotron {
   text-align: center;
   border-bottom: 1px solid #e5e5e5;
@@ -41,8 +34,6 @@ body {
   font-size: 21px;
   padding: 14px 24px;
 }
-
-
 @media screen and (min-width: 768px) {
   .header,
   .marketing,
@@ -50,7 +41,6 @@ body {
     padding-left: 0;
     padding-right: 0;
   }
-
   .header {
     margin-bottom: 30px;
   }
@@ -59,26 +49,15 @@ body {
   }
 }
 
-
-
-
 .bargraph {
   margin-left:50px;
   width:300px;
 
-
-
 }
-
 .piechart {
   display : inline-block;
   float:right;
-
-
 }
-
-
-
 #q-graph {
   display: block;
   position: relative;
@@ -87,9 +66,7 @@ body {
   padding-left:  100px;
   background: transparent;
   font-size: 11px;
-
 }
-
 #q-graph caption {
   caption-side: top;
   width: 600px;
@@ -100,7 +77,6 @@ body {
   z-index: 10;
   font-weight: bold;
 }
-
 #q-graph tr, #q-graph th, #q-graph td {
   position: absolute;
   bottom: 0;
@@ -110,17 +86,12 @@ body {
   padding: 0;
   text-align: center;
 }
-
 #q-graph td:hover {
   transition: all .3s ease;
-
-
-
     background-color: desaturate(#85144b, 100);
     opacity: .9;
     color: white;
   }
-
 #q-graph thead tr {
   left: 100%;
   top: 50%;
@@ -141,7 +112,6 @@ body {
   line-height: 2;
   left: 0;
 }
-
 #q-graph tbody tr {
   height: 296px;
   padding-top: 2px;
@@ -179,8 +149,6 @@ font-weight: normal; color: #333;}
   border-color: transparent;
   z-index:3;
 }
-
-
 #ticks {
   position: relative;
   top: -300px;
@@ -192,7 +160,6 @@ font-weight: normal; color: #333;}
   font-size: 10px;
   font-family: "fira-sans-2", Verdana, sans-serif;
 }
-
 #ticks .tick {
   position: relative;
   border-bottom: 1px dotted #C4C4C4;
@@ -206,41 +173,27 @@ font-weight: normal; color: #333;}
   margin: 0 0 0 0.5em;
   font-size:14px;
 }
-
-
-
-
-
-
 .donut-chart {
   position: relative;
 	width: 200px;
   height: 200px;
 }
-
-
 .back {
-
     clip: rect(0px, 200px, 200px, 100px);
     height: 100%;
     position: absolute;
     width: 100%;
   }
-
 .front {
     border-radius: 50%;
     clip: rect(0px, 100px, 200px, 0px);
     height: 100%;
     position: absolute;
     width: 100%;
-
   }
-
-
 #portion1 {
     transform: rotate(0deg);
   }
-
 #portion1 .front {
     background-color: red;
     transform: rotate(180deg);
@@ -260,29 +213,18 @@ font-weight: normal; color: #333;}
     background-color: blue;
     transform: rotate(90deg);
   }
-
   #year b{
         float: left;
-
     margin: 10px 91px;
   }
-
-
 .tabledata table{
   padding:30px;
-
-
-
 }
-
 .tabledata th{
   background-color:gray;
   padding:5px;
-
 }
-
 .tabledata td{
   background-color:white;
   padding:5px;
-
 }

@@ -1,5 +1,17 @@
-<div ng-repeat="call in hCtrl.callList track by $index ">
-    {{call.type}},
-    {{call.note}},
-    {{call.date}},
-</div>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Note</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="call in hCtrl.callList track by $index">
+        <td>{{call.type}}</td>
+        <td>{{call.note}}</td>
+        <td>{{call.date}}</td>
+    </tr>
+
+  </tbody>
+</table>

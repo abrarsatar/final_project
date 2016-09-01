@@ -23,6 +23,8 @@
                     </div>
                     <div class="modal-body">
                         <form>
+                          <input type = "text" ng-model = "hCtrl.call.name" placeholder="{{hero.name}}">{{hero.name}}</input>
+                          <br></br>
                           <label>Call Type</label>
                           <select class= "form-control" ng-model="hCtrl.call.type">
                           <option value="Phone">Phone</option>
@@ -39,7 +41,7 @@
                     </div>
           <td>{{hero.email}}</td>
           <td>{{hero.phone}}</td>
-          <td ng-show = {{hero.current}}>Yes</td>
+          <td ng-show = "{{hero.current}}">Yes</td>
       </tr>
 
     </tbody>
